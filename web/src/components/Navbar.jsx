@@ -14,12 +14,13 @@ const Navbar = () => {
           <li className="nav-item"><Link className="nav-link" to="/news">Noticias</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/events">Eventos</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/forum">Foro</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/resources">Recursos</Link></li>
+            {/*<li className="nav-item"><Link className="nav-link" to="/resources">Recursos</Link></li> */} 
             <li className="nav-item"><Link className="nav-link" to="/profile">Perfil de usuario</Link></li>     
           </ul>
 
           <ul className="navbar-nav">
           <li className="nav-item"><Link className="nav-link" to="/login">Iniciar sesión</Link></li>
+          <li className="nav-item"><Link to="/logout" className="nav-link">Cerrar Sesión</Link></li>  
           <li className="nav-item"><Link className="nav-link" to="/register">Registrarse</Link></li>
           </ul>
         </div>
@@ -29,7 +30,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-        
-

@@ -26,8 +26,10 @@ function News() {
           <p className="lead" style={{ fontStyle: "italic", marginBottom: "0" }}>
             Para estar a la última sobre el Pasado.
           </p>
+          <br/>
+          <p>(Para crear una entrada de noticias es necesario que completes todos los campos)</p>
           {isAuthenticated ? (
-            <Link to="/create-news" className="btn btn-primary mt-3">
+            <Link to="/createNews" className="btn btn-primary mt-3">
               Crear Noticia
             </Link>
           ) : (

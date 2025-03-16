@@ -4,12 +4,13 @@ const Event = require("../models/event.model");
 // FUNCIÓN PARA CREAR UN EVENTO:
 module.exports.create = async (req, res, next) => {
   try {
-    const { title, description, date, location } = req.body;
+    const { title, description, date, location, link } = req.body;
     const event = await Event.create({
       title,
       description,
       date,
       location,
+      link, 
       organizer: req.user ? req.user.id : null,
     });
     res.status(201).json(event);
@@ -40,6 +41,7 @@ module.exports.update = async (req, res, next) => {
       description: req.body.description,
       date: req.body.date,
       location: req.body.location,
+      link: req.body.link,
     };
 
     //QUITA LOS CAMPOS UNDEFINED:

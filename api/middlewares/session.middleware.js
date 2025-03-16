@@ -1,24 +1,6 @@
-/*
-module.exports.isAuthenticated = (req, res, next) => {
-
-    req.user = { id: "dummyUserId" };
-    next();
-  };
-  
-  module.exports.isAdmin = (req, res, next) => {
-  
-    next();
-  };
-  
-  module.exports.isColaborator = (req, res, next) => {
-    next();
-  };
-  */
-
-  const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 module.exports.isAuthenticated = (req, res, next) => {
- 
   const authHeader = req.headers.authorization;
   if (!authHeader) {
     return res.status(401).json({ message: "No se proporcionó token de autenticación" });
@@ -34,16 +16,17 @@ module.exports.isAuthenticated = (req, res, next) => {
       return res.status(401).json({ message: "Token inválido" });
     }
     //PARA ASIGNAR EL ID DEL USUARIO (DEBERÍA ESTAR EN EL TOKEN)
+    req.user = { id: decoded.id };
     next();
   });
 };
 
 module.exports.isAdmin = (req, res, next) => {
-  // Aquí puedes agregar la lógica para verificar si el usuario es administrador.
+  //SI EL USUARIO ES ADMINISTRADOR (PARA CUANDO TENGA LOS ROLES)
   next();
 };
 
 module.exports.isColaborator = (req, res, next) => {
-  // Aquí puedes agregar la lógica para verificar si el usuario es colaborador.
+  //SI EL USUARIO ES COLABORADOR (ROLES)
   next();
 };
