@@ -3,53 +3,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container my-4">
+     <div className="card p-2 shadow-lg" style={{ maxWidth: '1400px', width: '100%', margin: '0 auto' }}>
      
-      <div>
-        <h3>Bienvenido a Agorum, el espacio los amantes de las Humanidades y las Ciencias de Clío</h3>
-        <p>Este es un espacio para profesionales, estudiantes y amantes de la Historia, Arqueología, Antropología y más...</p>
-      </div>
 
-   
-      <div id="newsCarousel" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="path/to/image1.jpg" className="d-block w-100" alt="Evento 1" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Noticia/Eventos 1</h5>
-              <p>Descripción breve de la noticia o evento destacado.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="path/to/image2.jpg" className="d-block w-100" alt="Evento 2" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Noticia/Eventos 2</h5>
-              <p>Descripción breve de la noticia o evento destacado.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="path/to/image3.jpg" className="d-block w-100" alt="Evento 3" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Noticia/Eventos 3</h5>
-              <p>Descripción breve de la noticia o evento destacado.</p>
-            </div>
-          </div>
+
+        <div className="content text-center">
+          <h3>Bienvenido a Agorum, el espacio de los amantes de las Humanidades y las Ciencias de Clío</h3>
+    <br/> {/*¿CHAPUZA? (REVISAR) */}
+    <br/>
+          <p className="lead" style={{ marginBottom: "0", fontStyle: "italic" }}>
+            Este sitio está diseñado para profesionales, estudiantes y cualquier persona interesada en la Historia, la Arqueología, la Antropología y otras disciplinas humanísticas. Aquí encontrarás información, recursos y un lugar para compartir conocimientos y experiencias. 
+            <br/>
+            <br/>
+             Ya seas un académico, un periodista en busca de datos o simplemente un apasionado que quiere aprender más, Agorum es el espacio ideal para ti.
+          </p>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
-
+      <div className="text-center">
+        <img 
+          src="/foro1.jpeg" 
+          alt="Reconstrucción de un foro romano" 
+          className="img-fluid mt-4"
+        />
+      </div>
     </div>
   );
 };
 
 export default Home;
+
 
 
   

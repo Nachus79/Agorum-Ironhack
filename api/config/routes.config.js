@@ -14,7 +14,9 @@ const auth = require("../middlewares/session.middleware");
 
 //AUTENTICACIÓN, REGISTRO, LOGAUT Y DEMÁS: 
 router.post("/auth/register", authController.register);
-// ------------(Agrega rutas para login, logout, etc.)------------------------------
+router.post("/auth/login", authController.login);
+
+          // ------------(AGREGAR RUTAS PARA EL RESTO)------------------------------
 
 //RUTAS DE USUARIOS: (¿DEBERÍA INCLUIR UN PUT?)
 router.post("/users", usersController.create);
