@@ -9,6 +9,7 @@ import CreateNews from "./pages/CreateNews";
 import Forum from "./pages/Forum";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Register from "./pages/Register";
 import "bootstrap/dist/css/bootstrap.min.css"; //TENGO QUE REVISAR TAILWIND PARA FUTURAS VERSIONES.
 
@@ -22,10 +23,12 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/events" element={<Events />} />
           <Route path="/news" element={<News />} />
-          <Route path="/news" element={<CreateNews />} />
+          <Route path="/createNews" element={<CreateNews />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/resources" element={<Resources />} />
+         {/*<Route path="/resources" element={<Resources />} /> */} {/*PARA MÁS ADELANTE*/}
+         
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout/>} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>

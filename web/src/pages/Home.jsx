@@ -22,7 +22,7 @@ const Home = () => {
       </div>
       <div className="text-center">
         <img 
-          src="/foro1.jpeg" 
+          src="/foro2.jpg" 
           alt="Reconstrucción de un foro romano" 
           className="img-fluid mt-4"
         />
