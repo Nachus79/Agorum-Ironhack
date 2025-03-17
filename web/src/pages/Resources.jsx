@@ -1,3 +1,4 @@
+//PARA LA VERSIÓN 2.0.
 function Resources() {
     return (
       <div>

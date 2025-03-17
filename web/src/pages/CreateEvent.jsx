@@ -9,21 +9,23 @@ const CreateEvent = () => {
     description: "",
     date: "",
     location: "",
-    link: ""
+    link: "",
+    isOnline: false, 
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
+    const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value || ""
+      [name]: type === "radio" ? value === "true" : value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Buscando el puñetero error:", formData); 
+    console.log("Datos enviados:", formData);
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
@@ -87,6 +89,7 @@ const CreateEvent = () => {
             id="location"
             name="location"
             className="form-control"
+            placeholder="Madrid...Valencia...Online"
             value={formData.location || ""}
             onChange={handleChange}
             required
@@ -105,6 +108,31 @@ const CreateEvent = () => {
             required
           />
         </div>
+        <div className="mb-3">
+          <label className="form-label">¿El evento es online?</label>
+          <div>
+            <label className="me-3">
+              <input
+                type="radio"
+                name="isOnline"
+                value="true"
+                checked={formData.isOnline === true}
+                onChange={handleChange}
+              />{" "}
+              Sí
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="isOnline"
+                value="false"
+                checked={formData.isOnline === false}
+                onChange={handleChange}
+              />{" "}
+              No
+            </label>
+          </div>
+        </div>
         <button type="submit" className="btn btn-primary">Crear Evento</button>
       </form>
     </div>
@@ -112,3 +140,4 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
+

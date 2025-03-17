@@ -20,7 +20,7 @@ function News() {
 
   return (
     <div className="container my-2">
-      <div className="card p-2 shadow-lg" style={{ maxWidth: "400px", width: "100%", margin: "0 auto" }}>
+      <div className="card p-2 shadow-lg" style={{ maxWidth: "800px", width: "100%", margin: "0 auto" }}>
         <div className="card-body text-center">
           <h2>Noticias</h2>
           <p className="lead" style={{ fontStyle: "italic", marginBottom: "0" }}>

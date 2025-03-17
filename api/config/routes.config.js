@@ -7,6 +7,7 @@ const authController = require("../controllers/auth.controller");
 const usersController = require("../controllers/users.controller");
 const newsController = require("../controllers/news.controller");
 const eventsController = require("../controllers/events.controller");
+const forumController = require("../controllers/forum.controller");
 const resourcesController = require("../controllers/resources.controller");
 
 // MIDDLEWARES:
@@ -38,8 +39,18 @@ router.post("/events", auth.isAuthenticated, eventsController.create);
 // Aquí se corrige: usar eventsController.update en lugar de newsController.update
 router.patch("/events/:id", auth.isAuthenticated, auth.isAdmin, eventsController.update);
 router.get("/events", eventsController.list);
+router.get("/events/:id", eventsController.getDetails);
 // SOLAMENTE UN ADMINISTRADOR AUTENTICADO PUEDE BORRAR EVENTOS:
 router.delete("/events/:id", auth.isAuthenticated, auth.isAdmin, eventsController.delete);
+
+// RUTAS DEL FORO:
+router.post("/forum", auth.isAuthenticated, forumController.create);
+router.get("/forum", forumController.list);
+router.get("/forum/:id", forumController.getDetails);
+router.patch("/forum/:id", auth.isAuthenticated, forumController.update);
+router.delete("/forum/:id", auth.isAuthenticated, auth.isAdmin, forumController.delete);
+router.post("/forum/:postId/comments", auth.isAuthenticated, forumController.addComment);
+
 
 // RECURSOS (CON SUBIDA DE ARCHIVOS):
 const upload = require("../middlewares/multer.config");
