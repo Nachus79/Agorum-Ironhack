@@ -10,16 +10,16 @@ function Register() {
 
   // FUNCIÓN PARA EL ENVÍO DEL FORMULARIO.
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       // PETICIÓN POST PARA ENVIAR LA INFORMACIÓN DE USUARIO.
       await axios.post("http://localhost:3000/api/v1/auth/register", {
-        userName: username,    
-        firstName: firstname, 
-        lastName: lastname,    
+        userName: username,
+        firstName: firstname,
+        lastName: lastname,
         email,
         password,
-        studies: ""            
+        studies: "",
       });
       alert("Registro realizado con éxito");
     } catch (error) {
@@ -30,20 +30,32 @@ function Register() {
   return (
     <div className="content">
       <div className="container-fluid mt-5">
-        <h2 className="mb-4">Registro</h2>
+      <div className="card p-2 shadow-lg" style={{ maxWidth: "1200px", width: "100%", margin: "0 auto" }}>
+      <div className="card-body text-center">
+            <h2 className="mb-4">Registro</h2>
 
-        <p>
-          &nbsp;&nbsp;&nbsp;Por favor, rellena todos los campos para registrarte en el sistema. Asegúrate de elegir un nombre de usuario, una contraseña segura y seleccionar el nivel de estudios.
-        </p>
+            <p>
+              &nbsp;&nbsp;&nbsp;Por favor, rellena todos los campos para
+              registrarte en el sistema. Asegúrate de elegir un nombre de
+              usuario, una contraseña segura y seleccionar el nivel de estudios.
+            </p>
 
-        <p>
-          &nbsp;&nbsp;&nbsp;Estos definen tus posibilidades en <strong>Agorum/La Orden de Clío</strong>. Si tienes conocimientos sólidos en las ciencias de Clío (Historia, Historia del Arte, Arqueología, etc.) puedes inscribirte como "Magister" y colaborar activamente en la página.
-        </p>
+            <p>
+              &nbsp;&nbsp;&nbsp;Estos definen tus posibilidades en{" "}
+              <strong>Agorum/La Orden de Clío</strong>. Si tienes conocimientos
+              sólidos en las ciencias de Clío (Historia, Historia del Arte,
+              Arqueología, etc.) puedes inscribirte como "Magister" y colaborar
+              activamente en la página.
+            </p>
 
-        <p>&nbsp;&nbsp;&nbsp;EXPLICACIÓN Y BLA, BLA, BLA...¡TERMINAAAAAAAR!</p>
-
-        <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-          <div className="card p-4 shadow-lg" style={{ width: '400px' }}>
+            {/*<p>&nbsp;&nbsp;&nbsp;EXPLICACIÓN Y BLA, BLA, BLA...¡TERMINAAAAAAAR!</p>*/}
+          </div>
+        </div>
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="card p-4 shadow-lg" style={{ width: "400px" }}>
             <form
               onSubmit={handleSubmit}
               className="mx-auto"
@@ -141,7 +153,9 @@ function Register() {
                   <option value="postgrado">Postgrado</option>
                   <option value="doctorado">Doctorado</option>
                   <option value="autodidacta">Autodidacta</option>
-                  <option value="prefiero no decirlo">Prefiero no decirlo</option>
+                  <option value="prefiero no decirlo">
+                    Prefiero no decirlo
+                  </option>
                 </select>
               </div>
               <div className="d-flex justify-content-center">
